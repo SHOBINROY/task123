@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load myfilter %}
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<title>order</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<h1 class="alert alert-danger text-center mt-4">order Details</h1>
+		<div class="row">
+			<div class="col-sm-8 offset-sm-2 shadow p-5">
+				<h3 class="text-center mb-4"><u>Resume</u></h3>
+				<div class="row">
+					<div class="col-sm-4 text-center">
+						<img src="{{ order.profile_image.url }}" alt="" class="img-fluid img-thumbnail" width="150" height="150">
+					</div>
+					<div class="col-sm-8">
+						<p><strong>Name:</strong> {{ order.name }}</p>
+						<p><strong>Date of Birth:</strong> {{ order.dob }}</p>
+						<p><strong>Gender:</strong> {{ order.gender }}</p>
+						<p><strong>Address:</strong> {{ order.address }}, {{ order.age }}, {{ order.course }}-{{ order.department }}</p>
+						<p><strong>Mobile No:</strong> {{ order.phone_mobile }}</p>
+						<p><strong>Email ID:</strong> {{ order.mail_id }}</p>
+						<p><strong>materials:</strong> {{ order.materials|remove_special:"[]'"}}</p>
+						<p><strong>Attachment:</strong> <a href="{{ order.my_file.url }}" target="_blank">Download</a></p>
+						<div class="">
+							<a href="/" class="btn btn-danger">Back to Home</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- jQuery library (required for Bootstrap JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Popper.js (required for Bootstrap JavaScript plugins) -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
